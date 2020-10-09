@@ -1,5 +1,21 @@
 #include "cPeaje.h"
 
+cPeaje::cPeaje()
+{
+	Nombre = ' ';
+	Caja = 0.0;
+}
+
+cPeaje::cPeaje(string nombre, float caja)
+{
+	Nombre = nombre;
+	Caja = caja;
+}
+
+cPeaje::~cPeaje()
+{
+}
+
 float cPeaje::CobrarPeaje(cPersona* persona, float peso)
 {	
 	int valor = 0;

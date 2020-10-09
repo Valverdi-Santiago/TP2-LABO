@@ -42,6 +42,10 @@ void cVehiculo::Viajar(cCiudad * ciudadDestino, cPersona* persona)
 	int aux = 0;
 	aux = (kilometros / Consumo)*Valor_Nafta;
 	aux = aux + Peaje_Max * 10;
+
+
+	ListaT<cPeaje> *ListaPeajes = new ListaT<cPeaje>(10); //VER SI ESTA BIEN
+
 	while(persona->Get_Billetera() < aux)
 	{	
 		persona->Trabajar();
@@ -53,9 +57,9 @@ void cVehiculo::Viajar(cCiudad * ciudadDestino, cPersona* persona)
 			cout << "Viaje: " << UbicacionActual->Get_Nombre() << " --> " << ciudadDestino->Get_Nombre() << endl;
 			Set_Ubicacion(ciudadDestino);
 			Sumar_KilometrosRecorridos(kilometros,persona); //Sumo los kilometros que recorri
-		
-				
+	
 	}
+	delete ListaPeajes;
 }
 
 //Verifica si la nafta que tiene le alcanza para viajar hacia la ciudad de destino que le paso. Me devuelve un true si le alcanza y un false si no.

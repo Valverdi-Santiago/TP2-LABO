@@ -9,6 +9,7 @@
 #include "cPersona.h"
 #include "cCoordenada.h"
 #include "cVehiculo.h"
+#include "ListaT.h"
 
 
 using namespace std;
