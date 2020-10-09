@@ -117,9 +117,11 @@
   <ItemGroup>
     <ClInclude Include="cCiudad.h" />
     <ClInclude Include="cCoordenada.h" />
+    <ClInclude Include="cGPS.h" />
     <ClInclude Include="cPeaje.h" />
     <ClInclude Include="cPersona.h" />
     <ClInclude Include="cVehiculo.h" />
+    <ClInclude Include="ListaT.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cCiudad.cpp" />

@@ -60,6 +60,12 @@ cVehiculo * cPersona::Get_Vehiculo()
 		return Vehiculo;
 }
 
+//Me devuelve la clave(dni) de una persona
+string cPersona::GetClave()
+{
+	return DNI;
+}
+
 //Modifica el Vehiculo que tiene la persona. Generalmente lo uso para el metodo vender vehiculo.
 void cPersona::Set_Vehiculo(cVehiculo * vehiculo)
 {

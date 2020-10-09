@@ -30,6 +30,12 @@
     <ClInclude Include="cPeaje.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ListaT.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cGPS.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cPersona.cpp">

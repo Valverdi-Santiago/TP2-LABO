@@ -19,6 +19,7 @@ public:
 
 	cCoordenada* Get_Coordenadas();
 	string Get_Nombre();
+	string GetClave();
 	float Get_Lat();
 	float Get_Long();
 

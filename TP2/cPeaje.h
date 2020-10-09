@@ -19,7 +19,7 @@ public:
 	cPeaje(string nombre,float caja);
 	~cPeaje();
 	
-	float Cobrar(cPersona* persona,float peso);
-
+	float CobrarPeaje(cPersona* persona,float peso);
+	void SumarDineroGanado(float plata);
 };
 

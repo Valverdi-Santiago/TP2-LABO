@@ -1,6 +1,6 @@
 #include "cPeaje.h"
 
-float cPeaje::Cobrar(cPersona* persona, float peso)
+float cPeaje::CobrarPeaje(cPersona* persona, float peso)
 {	
 	int valor = 0;
 	auto t = time(nullptr);
@@ -30,5 +30,9 @@ float cPeaje::Cobrar(cPersona* persona, float peso)
 	return valor;
 	system("pause");
 
+}
 
+void cPeaje::SumarDineroGanado(float plata)
+{
+	Caja += plata;
 }

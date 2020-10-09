@@ -16,9 +16,10 @@ cVehiculo::cVehiculo()
 	Consumo = 0;
 	Peso = 0;
 	UbicacionActual = NULL;
+	GPS = NULL;
 }
 
-cVehiculo::cVehiculo(string patente, string modelo, string marca, float kilometrosRecorridos, int anioLanzamiento, float consumo, float naftaMaxima, float naftaActual, float peso, cCiudad *ubicacionActual)
+cVehiculo::cVehiculo(string patente, string modelo, string marca, float kilometrosRecorridos, int anioLanzamiento, float consumo, float naftaMaxima, float naftaActual, float peso, cCiudad *ubicacionActual, cGPS *gps)
 {
 	Patente = patente;
 	Modelo = modelo;
@@ -30,6 +31,7 @@ cVehiculo::cVehiculo(string patente, string modelo, string marca, float kilometr
 	NaftaMaxima = naftaMaxima;
 	Peso = peso;
 	UbicacionActual = ubicacionActual;
+	GPS = gps;
 }
 
 //Viaja desde la ciudad que se encuentra hacia la ciudad que le paso por parametro (ciudad destino). No devuelve nada.
@@ -142,6 +144,12 @@ void cVehiculo::Sumar_KilometrosRecorridos(float kilometros,cPersona * persona) 
 		}
 	}
 	
+}
+
+//Me devuelve la clave(patente) del vehiculo
+string cVehiculo::GetClave()
+{
+	return Patente;
 }
 
 //Cambia la ubicacion (ciudad) del vehiculo.

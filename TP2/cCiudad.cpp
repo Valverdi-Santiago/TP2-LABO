@@ -37,6 +37,11 @@ string cCiudad::Get_Nombre()
 {
 	return Nombre;
 }
+//Me devuelve la clave que voy a usar para la lista (nombre)
+string cCiudad::GetClave()
+{
+	return Nombre;
+}
 
 //Devuelve la latitud(float) de una ciudad
 float cCiudad::Get_Lat()

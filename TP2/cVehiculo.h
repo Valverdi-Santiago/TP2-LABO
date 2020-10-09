@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "cCiudad.h"
- //class cPersona;
+#include "cGPS.h"
 
 
 #include "cPersona.h"
@@ -21,11 +21,12 @@ private:
 	float NaftaActual;
 	float Peso;
 	cCiudad *UbicacionActual;
+	cGPS *GPS;
 
 public:
 	
 	cVehiculo();
-	cVehiculo(string patente, string modelo, string marca, float kilometrosRecorridos, int anioLanzamiento, float consumo, float naftaMaxima, float naftaActual, float peso, cCiudad *ubicacionActual);
+	cVehiculo(string patente, string modelo, string marca, float kilometrosRecorridos, int anioLanzamiento, float consumo, float naftaMaxima, float naftaActual, float peso, cCiudad *ubicacionActual, cGPS *gps);
 
 	void Viajar(cCiudad *ciudadDestino,cPersona* persona);
 	bool VerificarNafta(cCiudad *ciudadDestino);//true alcanza la nafta, false no alcanza 
@@ -34,6 +35,7 @@ public:
 	string To_String();
 	void Sumar_KilometrosRecorridos(float kilometros, cPersona* persona);
 
+	string GetClave();
 	void Set_Ubicacion(cCiudad *ciudad);
 
 	~cVehiculo();
