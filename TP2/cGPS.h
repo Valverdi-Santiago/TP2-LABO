@@ -13,6 +13,9 @@ public:
 
 	cCiudad* BuscarCiudad(string nombre);
 	ListaT<cCiudad>* Get_ListaCiudadesFavoritas();
+	unsigned int Get_CantidadCiudadesFavoritas();
+	void Listar();
+
 	~cGPS();
 };
 
@@ -28,6 +31,17 @@ cCiudad * cGPS::BuscarCiudad(string nombre)
 inline ListaT<cCiudad>* cGPS::Get_ListaCiudadesFavoritas()
 {
 	return ListaCiudadesFavoritas;
+}
+
+inline unsigned int cGPS::Get_CantidadCiudadesFavoritas()
+{
+	return ListaCiudadesFavoritas->Get_Ocupados();
+}
+
+inline void cGPS::Listar()
+{
+	cout << "----------Ciudades Favoritas GPS.----------" << endl;
+	ListaCiudadesFavoritas->Listar();
 }
 
 

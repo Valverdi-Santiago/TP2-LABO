@@ -25,14 +25,12 @@ public:
 
 	void VenderVehiculo(cPersona *cliente);
 	void Imprimir();
-
+	void Trabajar();
 
 	string GetClave();
 	cVehiculo* Get_Vehiculo();
 	int  Get_Billetera();
 	void Set_Vehiculo(cVehiculo *vehiculo);
-	
-	void Trabajar();
 
 
 	~cPersona();
