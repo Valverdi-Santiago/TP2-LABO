@@ -2,7 +2,7 @@
 
 cPeaje::cPeaje()
 {
-	Nombre = ' ';
+	Nombre = " ";
 	Caja = 0.0;
 }
 

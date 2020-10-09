@@ -1,5 +1,3 @@
-#define  _CRT_SECURE_NO_WARNINGS
-#pragma once
 #include <string>
 #include <iostream>
 #include <iomanip>
@@ -10,15 +8,22 @@
 #include "cCoordenada.h"
 #include "cVehiculo.h"
 #include "ListaT.h"
-
+#define N 10
 
 using namespace std;
 
 int main()
 {
 	
+	ListaT<cPersona> *ListaPersonas = new ListaT<cPersona>(N);
+	ListaT<cVehiculo> *ListaVehiculos = new ListaT<cVehiculo>(N);
 
-	cCiudad* BuenosAires = new cCiudad("BuenosAires", 713.947, new cCoordenada(-34.6083, -58.3712));
+
+
+
+	delete ListaPersonas;
+	delete ListaVehiculos;
+	/*cCiudad* BuenosAires = new cCiudad("BuenosAires", 713.947, new cCoordenada(-34.6083, -58.3712));
 	cCiudad* Junin = new cCiudad("Junin", 90.305, new cCoordenada(-34.58382, -60.94332));
 	cCiudad* GeneralVillegas = new cCiudad("GeneralVillegas", 18.275, new cCoordenada(-35.03333, -63.01667));
 	cCiudad* Chacabuco = new cCiudad("Chacabuco", 38.420, new cCoordenada(-34.64167, -60.47389));
@@ -54,10 +59,11 @@ int main()
 	
 	Juan->Get_Vehiculo()->CargarNafta(45,Juan);
 	
-	system("pause");
+	//system("pause");
+
 	delete BuenosAires, Junin, GeneralVillegas, Chacabuco, Lincoln;
 	delete Auto1, Auto2, Auto3;
-	delete Juan, Pablo, Ines, Victoria;
+	delete Juan, Pablo, Ines, Victoria;*/
 	
 	return 0;
 }

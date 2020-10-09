@@ -1,5 +1,5 @@
 #include "cCoordenada.h"
-#include <string>
+
 
 #define R 6371e3 //Radio de la tierra
 #define PI 3.14159265358979323846

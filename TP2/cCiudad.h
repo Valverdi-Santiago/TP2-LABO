@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <string>
 #include "cCoordenada.h"
 
 using namespace std;
@@ -16,6 +17,7 @@ public:
 	cCiudad(string nombre, float poblacion, cCoordenada *coordenada);
 
 	string To_String();
+	void Imprimir();
 
 	cCoordenada* Get_Coordenadas();
 	string Get_Nombre();

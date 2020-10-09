@@ -1,10 +1,10 @@
 #pragma once
 #include <iostream>
+#include <string>
 #include "cCiudad.h"
 #include "cGPS.h"
 #include "ListaT.h"
 #include "cPeaje.h"
-
 #include "cPersona.h"
 #define NMAX 10000 //Kilometros que tiene que hacer el servis 
 using namespace std;

@@ -1,5 +1,4 @@
 #include "cVehiculo.h"
-#include <string>
 #define Valor_Nafta  60
 #define Peaje_Max 30
 

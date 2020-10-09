@@ -1,5 +1,5 @@
 #include "cCiudad.h"
-#include <string>
+
 
 
 cCiudad::cCiudad()
@@ -24,6 +24,12 @@ string cCiudad::To_String()
 		return ("  " + Nombre + " -Poblacion: " + to_string(Poblacion) + "  -" + Coordenadas->To_String());
 	else
 		return "No tiene ciudad.";
+}
+
+void cCiudad::Imprimir()
+{
+	cout << "---CIUDAD---" << endl;
+	cout << "" << Nombre << " .poblacion: " << Poblacion << ".coordenadas: (" << Coordenadas->Get_Latitud() << ", " << Coordenadas->Get_Longitud() << endl;
 }
 
 //Devuelve las coordenadas(*coordenadas) de una ciudad
