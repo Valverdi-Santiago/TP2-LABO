@@ -6,7 +6,7 @@
 #include "ListaT.h"
 #include "cPeaje.h"
 #include "cPersona.h"
-#define NMAX 10000 //Kilometros que tiene que hacer el servis 
+#define NMAX 10000 //Kilometros que tiene que hacer el //servis 
 using namespace std;
 
 class cVehiculo
@@ -27,7 +27,7 @@ private:
 public:
 	
 	cVehiculo();
-	cVehiculo(string patente, string modelo, string marca, float kilometrosRecorridos, int anioLanzamiento, float consumo, float naftaMaxima, float naftaActual, float peso, cCiudad *ubicacionActual, cGPS *gps);
+	cVehiculo(string patente, string modelo, string marca, float kilometrosRecorridos, int anioLanzamiento, float consumo, float naftaMaxima, float naftaActual, float peso, cCiudad *ubicacionActual);
 
 	void Viajar(cCiudad *ciudadDestino,cPersona* persona);
 	bool VerificarNafta(cCiudad *ciudadDestino);//true alcanza la nafta, false no alcanza 

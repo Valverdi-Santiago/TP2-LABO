@@ -18,8 +18,10 @@ cVehiculo::cVehiculo()
 	GPS = NULL;
 }
 
-cVehiculo::cVehiculo(string patente, string modelo, string marca, float kilometrosRecorridos, int anioLanzamiento, float consumo, float naftaMaxima, float naftaActual, float peso, cCiudad *ubicacionActual, cGPS *gps)
+cVehiculo::cVehiculo(string patente, string modelo, string marca, float kilometrosRecorridos, int anioLanzamiento, float consumo, float naftaMaxima, float naftaActual, float peso, cCiudad *ubicacionActual)
 {
+	GPS = new cGPS();
+
 	Patente = patente;
 	Modelo = modelo;
 	Marca = marca;
@@ -30,7 +32,7 @@ cVehiculo::cVehiculo(string patente, string modelo, string marca, float kilometr
 	NaftaMaxima = naftaMaxima;
 	Peso = peso;
 	UbicacionActual = ubicacionActual;
-	GPS = gps;
+	
 }
 
 //Viaja desde la ciudad que se encuentra hacia la ciudad que le paso por parametro (ciudad destino). No devuelve nada.
@@ -54,9 +56,9 @@ void cVehiculo::Viajar(cCiudad * ciudadDestino, cPersona* persona)
 	else
 	{
 			cout << "Viaje: " << UbicacionActual->Get_Nombre() << " --> " << ciudadDestino->Get_Nombre() << endl;
-			Set_Ubicacion(ciudadDestino);
 			Sumar_KilometrosRecorridos(kilometros,persona); //Sumo los kilometros que recorri
-	
+			Set_Ubicacion(ciudadDestino);
+
 	}
 	delete ListaPeajes;
 }
@@ -135,11 +137,15 @@ string cVehiculo::To_String()
 void cVehiculo::Sumar_KilometrosRecorridos(float kilometros,cPersona * persona) //VER SI ES LO Q QUIERE DAMI
 {
 	float aux=0;
-
+	int aux2 = 0;
 	for (int i = 0; i < kilometros; i++)
 	{
 		
 		KilometrosRecorridos += 1;
+		aux2 = KilometrosRecorridos;
+		if(aux==Consumo)
+		NaftaActual -= 1;
+
 		if (NaftaActual == 0)
 		{
 			aux = (kilometros-i)/Consumo;//calculo los litros que me faltan

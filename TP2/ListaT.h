@@ -64,6 +64,7 @@ inline void ListaT<T>::Listar() //VER QUE MI CLASE TENGA IMRPIMIR
 	for (unsigned int i = 0; i < Ocupados; i++)
 	{
 		vector[i]->Imprimir();
+		
 	}
 }
 

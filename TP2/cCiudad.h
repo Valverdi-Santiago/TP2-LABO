@@ -24,7 +24,7 @@ public:
 	string GetClave();
 	float Get_Lat();
 	float Get_Long();
-
+	void Imprimir();
 	~cCiudad();
 };
 
