@@ -56,5 +56,8 @@
     <ClCompile Include="cPeaje.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="cGPS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

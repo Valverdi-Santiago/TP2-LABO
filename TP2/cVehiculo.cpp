@@ -134,7 +134,7 @@ string cVehiculo::To_String()
 }
 
 //Suma los kilometros que va recorriendo el vehiculo.
-void cVehiculo::Sumar_KilometrosRecorridos(float kilometros,cPersona * persona) //VER SI ES LO Q QUIERE DAMI
+void cVehiculo::Sumar_KilometrosRecorridos(float kilometros,cPersona * persona) 
 {
 	float aux=0;
 	int aux2 = 0;

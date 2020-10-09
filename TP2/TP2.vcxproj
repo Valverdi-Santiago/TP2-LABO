@@ -126,6 +126,7 @@
   <ItemGroup>
     <ClCompile Include="cCiudad.cpp" />
     <ClCompile Include="cCoordenada.cpp" />
+    <ClCompile Include="cGPS.cpp" />
     <ClCompile Include="cPeaje.cpp" />
     <ClCompile Include="cPersona.cpp" />
     <ClCompile Include="cVehiculo.cpp" />
