@@ -61,10 +61,6 @@ float cCiudad::Get_Long()
 	return Coordenadas->Get_Longitud();
 }
 
-void cCiudad::Imprimir()
-{
-	cout << Nombre << endl;
-}
 
 cCiudad::~cCiudad()
 {

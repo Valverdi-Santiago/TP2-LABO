@@ -18,8 +18,23 @@ int main()
 	ListaT<cPersona> *ListaPersonas = new ListaT<cPersona>(N);
 	ListaT<cVehiculo> *ListaVehiculos = new ListaT<cVehiculo>(N);
 
+	cPersona *Juan =  cPersona("Juan", "Diaz", 1000, "41.987.545", Auto1, BuenosAires);
+	cPersona *Pablo = cPersona("Pablo", "Rodriguez", 1000, "34.567.654", NULL, Junin);
+	cPersona *Ines = cPersona("Ines", "Martinez", 1000, "38.675.456", Auto2, GeneralVillegas);
+	cPersona *Victoria = cPersona("Victoria", "Diaz", 1000, "42.345.456", Auto3, BuenosAires);
 
+	ListaPersonas->AgregarItem(Juan);
+	ListaPersonas->AgregarItem(Pablo);
+	ListaPersonas->AgregarItem(Ines);
+	ListaPersonas->AgregarItem(Victoria);
 
+	cVehiculo *Auto1 = new cVehiculo("AD324DE", "Polo GTi", "Volkswagen", 12000, 2012, 100, 45, 0, 1325, BuenosAires);
+	cVehiculo *Auto2 = new cVehiculo("AB123JD", "A1", "Audi", 0, 2017, 100, 45, 10, 1700, GeneralVillegas);
+	cVehiculo *Auto3 = new cVehiculo("AG231ED", "Cruze Hatchback", "Chevrolet", 23000, 2014, 100, 60, 20, 1850, BuenosAires);
+
+	ListaVehiculos->AgregarItem(Auto1);
+	ListaVehiculos->AgregarItem(Auto2);
+	ListaVehiculos->AgregarItem(Auto3);
 
 	delete ListaPersonas;
 	delete ListaVehiculos;
