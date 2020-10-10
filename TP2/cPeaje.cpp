@@ -44,11 +44,16 @@ float cPeaje::CobrarPeaje(cPersona* persona, float peso)
 	else if (peso > 1501) { valor = valor * 1.2; }
 	Caja += valor;
 	return valor;
-	system("pause");
+
 
 }
 
 void cPeaje::SumarDineroGanado(float plata)
 {
 	Caja += plata;
+}
+
+string cPeaje::GetClave()
+{
+	return Nombre;
 }

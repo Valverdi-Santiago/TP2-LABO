@@ -1,4 +1,4 @@
-//#define  _CRT_SECURE_NO_WARNINGS
+#define  _CRT_SECURE_NO_WARNINGS
 #pragma once
 #include <iostream>
 #include <iomanip>
@@ -10,16 +10,17 @@ using namespace std;
 class cPeaje
 {
 
-private:
+public:
 	string Nombre;
 	float Caja;
 
-public:
+//public:
 	cPeaje();
 	cPeaje(string nombre,float caja);
 	~cPeaje();
 	
 	float CobrarPeaje(cPersona* persona,float peso);
 	void SumarDineroGanado(float plata);
+	string GetClave();
 };
 

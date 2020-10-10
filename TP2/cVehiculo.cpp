@@ -36,27 +36,46 @@ cVehiculo::cVehiculo(string patente, string modelo, string marca, float kilometr
 }
 
 //Viaja desde la ciudad que se encuentra hacia la ciudad que le paso por parametro (ciudad destino). No devuelve nada.
-void cVehiculo::Viajar(cCiudad * ciudadDestino, cPersona* persona)
+bool cVehiculo::Viajar(cCiudad * ciudadDestino, cPersona* persona)
 {
+	if (persona->Get_Vehiculo ()== NULL)
+	{
+		cout<<"sin auto para viajar"<<endl;
+		return -1;
+	}
 	float kilometros = UbicacionActual->Get_Coordenadas()->CalcularDistancia(ciudadDestino->Get_Lat(), ciudadDestino->Get_Long());
-	
+	int Cant = rand() % (int)(ceil(kilometros / 50) + 1);
+	int i;
 	int aux = 0;
 	aux = (kilometros / Consumo)*Valor_Nafta;
 	aux = aux + Peaje_Max * 10;
+	cPeaje* peaje1 = new cPeaje("peaje1",0);
+	cPeaje* peaje2 = new cPeaje("peaje2", 0);
+	cPeaje* peaje3= new cPeaje("peaje3", 0);
+	cPeaje* peaje4 = new cPeaje("peaje4", 0);
+	cPeaje* peaje5 = new cPeaje("peaje5", 0);
 
-
-	ListaT<cPeaje> *ListaPeajes = new ListaT<cPeaje>(10); //VER SI ESTA BIEN
-
+	ListaT<cPeaje> *ListaPeajes = new ListaT<cPeaje>(Cant); //VER SI ESTA BIEN
+	
+	ListaPeajes->AgregarItem(peaje1);
+	ListaPeajes->AgregarItem(peaje2);
+	ListaPeajes->AgregarItem(peaje3);
+	ListaPeajes->AgregarItem(peaje4);
+	ListaPeajes->AgregarItem(peaje5);
+	
 	while(persona->Get_Billetera() < aux)
 	{	
 		persona->Trabajar();
 	}
-	if (UbicacionActual->Get_Coordenadas() == ciudadDestino->Get_Coordenadas())
+	
+	
+	
+	if (UbicacionActual->Get_Lat() == ciudadDestino->Get_Lat() && UbicacionActual->Get_Long() == ciudadDestino->Get_Long())
 		cout << "ya se encuentra en esa ciudad." << endl;
 	else
 	{
 			cout << "Viaje: " << UbicacionActual->Get_Nombre() << " --> " << ciudadDestino->Get_Nombre() << endl;
-			Sumar_KilometrosRecorridos(kilometros,persona); //Sumo los kilometros que recorri
+			Sumar_KilometrosRecorridos(kilometros,persona,Cant,ListaPeajes); //Sumo los kilometros que recorri
 			Set_Ubicacion(ciudadDestino);
 
 	}
@@ -134,13 +153,27 @@ string cVehiculo::To_String()
 }
 
 //Suma los kilometros que va recorriendo el vehiculo.
-void cVehiculo::Sumar_KilometrosRecorridos(float kilometros,cPersona * persona) 
+void cVehiculo::Sumar_KilometrosRecorridos(float kilometros,cPersona * persona,int Cant, ListaT<cPeaje>* ListaPeajes)
 {
+	int n = 0;
+
 	float aux=0;
 	int aux2 = 0;
+	int DistEntrePeajes = 0;
+	float Valor = 0;
+	
+	DistEntrePeajes = int(kilometros) / Cant;
+
+
 	for (int i = 0; i < kilometros; i++)
 	{
-		
+		if (DistEntrePeajes * n == kilometros)
+		{
+			Valor = ListaPeajes->CobrarPeaje(persona, Peso);
+			ListaPeajes->Get_Caja(ListaPeajes->BucarItem(n), Valor);
+			n++;
+			
+		}
 		KilometrosRecorridos += 1;
 		aux2 = KilometrosRecorridos;
 		if(aux==Consumo)

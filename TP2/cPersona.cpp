@@ -17,10 +17,8 @@ cPersona::cPersona(string nombre, string apellido, int billetera, const string d
 	Apellido = apellido;
 	Vehiculo = vehiculo;
 	CiudadOrigen = ciudadorigen;
-	if (billetera >= 1000) //PREGUNTAR SI ESTA BIEN ASI O SI LO PASO POR DEFECTO
-		Billetera = billetera;
-	else
-		Billetera = 1000;
+	Billetera = billetera;
+	
 }
 
 //Verifica que la persona que le paso por parametro sea distinta a la persona q le pertenece el vehiculo, de ser asi, lo vende.
@@ -58,6 +56,8 @@ cVehiculo * cPersona::Get_Vehiculo()
 {
 	if (Vehiculo != NULL)
 		return Vehiculo;
+
+	else	return NULL;
 }
 
 //Me devuelve la clave(dni) de una persona
@@ -77,10 +77,12 @@ int cPersona::Get_Billetera()
 }
 void cPersona::Trabajar() 
 {
+	cout << "Trabajando" << endl;
 	Billetera += 100;
 }
 
 
 cPersona::~cPersona()
 {
+
 }

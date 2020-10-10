@@ -1,6 +1,11 @@
+#define _CRT_SECURE_NO_WARNINGS
 #pragma once
 #include <string>
+#include <ctime>
+
 #define NMAX 10
+#include "cPeaje.h"
+class cPersona;
 
 using namespace std;
 template<class T>
@@ -18,6 +23,7 @@ public:
 	bool AgregarItem(T *item);
 	void Listar();
 	T* BucarItem(string clave);
+	T* BucarItem(int num);
 
 	T* Quitar(string clave);
 	T* Quitar(T *item);
@@ -28,6 +34,9 @@ public:
 	unsigned int Get_ItemPos(string clave);
 	unsigned int Get_Ocupados();
 	unsigned int Get_Tamanio();
+	float CobrarPeaje(cPersona* persona, float peso);
+	void Get_Caja(cPeaje* peaje,  float Valor);
+
 
 	~ListaT();
 };
@@ -78,7 +87,16 @@ inline T * ListaT<T>::BucarItem(string clave)
 	}
 	return NULL;
 }
-
+template<class T>
+inline T* ListaT<T>::BucarItem(int num)
+{
+	for (unsigned int i = 0; i < Ocupados; i++)
+	{
+		if (i == num)
+			return vector[i];
+	}
+	return NULL;
+}
 template<class T>
 inline T * ListaT<T>::Quitar(string clave)
 {
@@ -148,7 +166,14 @@ inline unsigned int ListaT<T>::Get_Tamanio()
 {
 	return Tamanio;
 }
-
+template<class T>
+ inline  float ListaT<T>::CobrarPeaje(cPersona* persona, float peso)
+ {
+	 float valor;
+	 valor= vector[0]->CobrarPeaje(persona, peso);
+	 return valor;
+	
+}
 template<class T>
 ListaT<T>::ListaT::~ListaT()
 {
@@ -161,4 +186,9 @@ ListaT<T>::ListaT::~ListaT()
 		}
 		delete[] vector;
 	}
+}
+template<class T>
+void ListaT<T>::Get_Caja(cPeaje* peaje,float Valor)
+{
+	peaje->Caja += Valor;
 }
